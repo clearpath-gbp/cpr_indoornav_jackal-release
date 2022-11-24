@@ -1,3 +1,26 @@
+## cpr_indoornav_jackal (noetic) - 0.3.4-1
+
+The packages in the `cpr_indoornav_jackal` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -t noetic -r noetic cpr_indoornav_jackal` on `Thu, 24 Nov 2022 16:20:35 -0000`
+
+The `cpr_indoornav_jackal` package was released.
+
+Version of package(s) in repository `cpr_indoornav_jackal`:
+
+- upstream repository: https://github.com/clearpathrobotics/cpr-indoornav-jackal.git
+- release repository: https://github.com/clearpath-gbp/cpr_indoornav_jackal-release.git
+- rosdistro version: `0.3.3-1`
+- old version: `0.3.3-1`
+- new version: `0.3.4-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.1`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## cpr_indoornav_jackal (noetic) - 0.3.3-1
 
 The packages in the `cpr_indoornav_jackal` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -t noetic -r noetic cpr_indoornav_jackal` on `Mon, 03 Oct 2022 19:56:18 -0000`
