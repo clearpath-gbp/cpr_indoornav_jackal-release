@@ -7,7 +7,9 @@ from sensor_msgs.msg import BatteryState
 from std_msgs.msg import Header
 
 # Normal operational voltage of the Jackal batteries
-MAX_VOLTAGE=29.4
+# the absolute upper limit for the battery is 29.4V, but treat anything above
+# 28.8V as "full" for reporting purposes
+MAX_VOLTAGE=28.8
 MIN_VOLTAGE=22.4
 
 NaN = float('nan')
@@ -26,6 +28,8 @@ def status_cb(data, node):
 class PowerStatusRelayNode:
     def __init__(self):
         rospy.init_node('jackal_power_monitor')
+        self.samples = []
+        self.MAX_SAMPLES=30
 
     def start(self):
         self.mcu_sub = rospy.Subscriber('/status', Status, status_cb, self)
@@ -34,6 +38,11 @@ class PowerStatusRelayNode:
     def status_callback(self, data):
         msg = BatteryState()
 
+        self.samples.append(data.measured_battery)
+        if len(self.samples) > self.MAX_SAMPLES:
+            self.samples.pop(0)
+        avg_volts = sum(self.samples)/len(self.samples)
+
         # set up the message header
         msg.header = Header()
         msg.header.stamp = rospy.Time.now()
@@ -41,7 +50,7 @@ class PowerStatusRelayNode:
         # fill the rest of the pertinent payload
         msg.present = True
         msg.voltage = data.measured_battery
-        msg.percentage = linear_rescale(data.measured_battery, MIN_VOLTAGE, MAX_VOLTAGE, 0, 1)
+        msg.percentage = linear_rescale(avg_volts, MIN_VOLTAGE, MAX_VOLTAGE, 0, 1, clip=True)
         msg.current = data.total_current
         msg.power_supply_status = msg.POWER_SUPPLY_STATUS_DISCHARGING  # no built-in charging!
         msg.power_supply_health = msg.POWER_SUPPLY_HEALTH_UNKNOWN
