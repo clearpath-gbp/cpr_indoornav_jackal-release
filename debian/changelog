@@ -1,0 +1,75 @@
+ros-noetic-cpr-indoornav-jackal (0.4.3-1focal) focal; urgency=high
+
+  * Use the new ROS 2 API packages
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Fri, 07 Jun 2024 04:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.4.2-1focal) focal; urgency=high
+
+  * Use galactic by default
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Mon, 27 May 2024 04:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.4.1-1focal) focal; urgency=high
+
+  * Swap the priorities of /cmd_vel and /manual/cmd_vel to enable teleop assist via the GUI
+  * Remove Control_extras export for outdoornav
+  * Contributors: Chris Iverach-Brereton, Michael Hosmar, José Mastrangelo
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Tue, 26 Mar 2024 04:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.4.0-1focal) focal; urgency=high
+
+  * Update to use Otto's 2.26 release
+  * Contributors: Chris Iverach-Brereton, José Mastrangelo
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Thu, 04 Jan 2024 05:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.3.4-1focal) focal; urgency=high
+
+  * Use a 30-sample rolling average for the battery percentage instead of single samples. On Jackal this equates to ~30s averages
+  * Add a group for wireless charge docking if applicable
+  * Reduce the upper limit for the full battery voltage to 28.8V. See OPG02-76
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Thu, 24 Nov 2022 05:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.3.3-1focal) focal; urgency=high
+
+  * Add separate bridge params for GX5 vs UM7 setups
+  * Add the web GUI input to the twist_mux
+  * tune dock distance without actual receiver attached
+  * added launch file for docking. added argument to create docking job
+  * remove controller launch
+  * made hokuyo the default laser
+  * added dock controller launch file
+  * added section to start indoornav docking and docking setup script
+  * Contributors: Chris Iverach-Brereton, José Mastrangelo
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Mon, 03 Oct 2022 04:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.3.2-1focal) focal; urgency=high
+
+  * Fix the python interpreter to force python3
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Thu, 28 Jul 2022 04:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.3.1-1focal) focal; urgency=high
+
+  * Change the ROS1->2 bridge domain to 91
+  * Fix a bug with the BRIDGE_SETUP_PATH envar
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Fri, 03 Jun 2022 04:00:00 -0000
+
+ros-noetic-cpr-indoornav-jackal (0.3.0-1focal) focal; urgency=high
+
+  * Initial public release
+  * Contributors: Chris Iverach-Brereton
+
+ -- Chris Iverach-Brereton <civerachb@clearpathrobotics.com>  Fri, 06 May 2022 04:00:00 -0000
+
+
